@@ -77,8 +77,8 @@ userSchema.methods.generateToken = function(callback){
     })
 }
 
-//
-userSchema.methods.findByToken = function(token, callback){
+//Authentication - Login
+userSchema.statics.findByToken = function(token, callback){
     var user = this;
     
     //토큰 디코딩

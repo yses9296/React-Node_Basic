@@ -1,10 +1,10 @@
-const { User } = require('./models/User');
+const { User } = require('../models/User');
 
 let auth = (req, res, next) => {
     //인증 처리 하는 곳
 
     //step 1: 클라이언트 쿠키에서 토큰을 가져오기
-    let token = req.cookie.x_auth;
+    let token = req.cookies.x_auth;
     
     //step 2: 토큰을 디코딩하고 User 찾기
     User.findByToken(token, (err, user) => {
