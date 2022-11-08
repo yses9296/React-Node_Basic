@@ -2,16 +2,17 @@ const express = require('express')
 const app = express()
 const port = 4000
 
+const config = require('./config/key')
 //mongoDB connection - mongoose
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://yses9296:jj0709ang25@cluster0.vei6kr9.mongodb.net/?retryWrites=true&w=majority')
+mongoose.connect(config.mongoURI)
 .then( ()=> console.log('MongoDB Connected..')) //MongoDB Connection Succeed
 .catch( err => console.log(err))                //MongoDB Connection Failed
 
 
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('Hello World! This is Node with React')
 })
 
 //Register Route
