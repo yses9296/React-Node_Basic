@@ -33,6 +33,28 @@ app.post('/register', (req, res) => {//회원가입에 필요한 정보들을 cl
   });
 })
 
+//Login Route
+app.post('./login', (req, res) => {
+  //step 1: 요청된 이메일을 데이터베이스에서 찾는다.
+  //step 2: 요청한 email가 존재한다면 비밀번호가 같은지 확인
+  //step 3: 이메일, 비밀번호 모두 일치 시 토큰 생성
+
+  User.findOne({email: req.body.email}, (err, userInfo) => {
+    if(!userInfo) return res.json({loginSuccess: false, message: "존재하지 않는 이메일입니다."})
+
+    userInfo.comparePassword(req.body.password, (err, isMatch) => {
+      if(!isMatch)
+        return res.json({loginSuccess: false, message: "비밀번호가 일치하지 않습니다." })
+      
+      userInfo.generateToken((err, user) => {
+
+      })
+
+      
+    })
+  })
+});
+
 
 
 app.listen(port, () => {

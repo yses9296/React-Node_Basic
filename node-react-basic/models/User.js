@@ -56,8 +56,17 @@ userSchema.pre('save', function(next){
     else{
         next();
     }
-
 })
+
+//Login - DB password 일치 확인
+userSchema.methods.comparePassword = function(inputPassword, callback){
+    bcrypt.compare(inputPassword, this.password, function(err, isMatch) {
+        if(err) return callback(err)
+        callback(null, isMatch)
+    })
+
+}
+
 
 const User = mongoose.model('User', userSchema) //userSchema를 User라는 이름의 model로 감싸기
 module.exports= { User } //User 모델을 외부에서도 접근 가능 설정
