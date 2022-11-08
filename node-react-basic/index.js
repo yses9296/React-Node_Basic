@@ -2,7 +2,8 @@ const express = require('express')
 const app = express()
 const port = 4000
 
-const config = require('./config/key')
+const config = require('./config/key');
+
 //mongoDB connection - mongoose
 const mongoose = require('mongoose');
 mongoose.connect(config.mongoURI)
@@ -10,16 +11,16 @@ mongoose.connect(config.mongoURI)
 .catch( err => console.log(err))                //MongoDB Connection Failed
 
 
-
 app.get('/', (req, res) => {
   res.send('Hello World! This is Node with React')
 })
 
-//Register Route
+
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true})); //application/x-www-form-urlencoded 분석
 app.use(bodyParser.json()); //application/json 분석
 
+//Register Route
 const { User } = require('./models/User');
 
 app.post('/register', (req, res) => {//회원가입에 필요한 정보들을 client에서 가져오면 그것들을 데이터 베이스에 넣어준다.
@@ -31,6 +32,7 @@ app.post('/register', (req, res) => {//회원가입에 필요한 정보들을 cl
     })
   });
 })
+
 
 
 app.listen(port, () => {
