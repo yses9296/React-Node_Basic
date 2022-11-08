@@ -31,5 +31,5 @@ const userSchema = mongoose.Schema({
     }
 })  
 
-const User = mongoose.model('User', userSchema) //userSchema를 model 로 감싸기
-module.exports= {User}
+const User = mongoose.model('User', userSchema) //userSchema를 User라는 이름의 model로 감싸기
+module.exports= { User } //User 모델을 외부에서도 접근 가능 설정
