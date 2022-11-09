@@ -14,7 +14,7 @@ let auth = (req, res, next) => {
 
         req.token = token;
         req.user = user;
-
+        <SpecificComponent {...props} />
         next();
     })
 

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../../_actions/user_action'
 
-const LoginPage = () => {
+const LoginPage = (props) => {
   const dispatch = useDispatch();
 
   const [email, setEmail] = useState('');
@@ -24,7 +24,15 @@ const LoginPage = () => {
       password: password
     }
     //server로 전송하기전 reducer 거치기
-    dispatch(loginUser(body)); 
+    dispatch(loginUser(body))
+      .then(response => {
+        if(response.payload.loginSuccess){
+          // props.history.push('/') //hoc autg 설정 필요
+        }
+        else {
+          alert('Error')
+        }
+      }); 
   }
 
 
