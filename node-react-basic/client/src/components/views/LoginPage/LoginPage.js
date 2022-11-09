@@ -1,8 +1,10 @@
 import { Axios } from 'axios';
 import React, { useState } from 'react';
-import { useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { loginUser } from '../../../_actions/user_action'
 
 const LoginPage = () => {
+  const dispatch = useDispatch();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -21,7 +23,8 @@ const LoginPage = () => {
       email: email, 
       password: password
     }
-    Axios.post('/api/users/login', body)
+    //server로 전송하기전 reducer 거치기
+    dispatch(loginUser(body)); 
   }
 
 
