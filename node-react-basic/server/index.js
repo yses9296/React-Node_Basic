@@ -21,10 +21,15 @@ mongoose.connect(config.mongoURI)
 .catch( err => console.log(err))                //MongoDB Connection Failed
 
 
+//test init
 app.get('/', (req, res) => {
   res.send('Hello World! This is Node with React')
 })
 
+//React JS + Node
+app.get('/api/hello',(req, res) => {
+  res.send('Hello You reached Node js');
+})
 
 
 
