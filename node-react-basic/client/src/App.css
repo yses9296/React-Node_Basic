@@ -5,3 +5,48 @@
 .App {
   width: 100%;
 }
+#page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; height: 100vh;
+  color: #333;
+}
+
+/* langdingPage */
+.landing_page {
+  background-color: #999;
+}
+
+/* loginPage */
+.login_page {
+  background-color: beige;
+}
+.login_page form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login_page form label {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.login_page form input {
+  display: block;
+  width: 300px;
+  margin-top: 10px;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid #555;
+  outline: none;  
+}
+.login_page form button {
+  display: block;
+  width: 150px;
+  height: 40px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  background: #fff;
+  border: 1px solid #dbdbdb;
+} 

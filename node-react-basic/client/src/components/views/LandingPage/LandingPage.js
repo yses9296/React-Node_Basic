@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
+// import '../../../App.css'
 
 const LandingPage = ()=>{
 
@@ -9,8 +10,8 @@ const LandingPage = ()=>{
     }, [])
 
     return (
-        <div>
-            <p>Hello World</p>
+        <div id="page" className="landing_page" >
+            <h2>Start React - Node</h2>
         </div>
     );
 }

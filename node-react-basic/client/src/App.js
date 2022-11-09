@@ -5,13 +5,12 @@ import LoginPage from './components/views/LoginPage/LoginPage';
 import RegisterPage from './components/views/RegisterPage/RegisterPage';
 import NavBar from './components/views/NavBar/NavBar';
 import Footer from './components/views/Footer/Footer';
+import './App.css';
 
 function App() {
   return (
     <Router>
       <div>
-        <h1>React Router</h1>
-      
         <Routes>
           <Route path="/" element={<LandingPage/>}></Route>
           <Route path="/login*" element={<LoginPage/>}> </Route>
