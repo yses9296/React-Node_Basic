@@ -39,7 +39,8 @@ app.post('/api/users/register', (req, res) => {//회원가입에 필요한 정�
       success: true
     })
   });
-})
+})//Register Route
+
 
 //Login Route
 app.post('/api/users/login', (req, res) => {
@@ -68,7 +69,8 @@ app.post('/api/users/login', (req, res) => {
       
     })
   })
-});
+});//Login-Route
+
 
 //Login - Authentication
 const { auth } = require('./middleware/auth');
@@ -86,7 +88,9 @@ app.get('/api/users/auth', auth, (req, res) => {
     image: req.user.image,
   })
 
-})//Login
+})//Login - Authentication
+
+
 
 //Logout - Authentication
 app.get('/api/users/logout', auth, (req, res) => {
@@ -98,7 +102,9 @@ app.get('/api/users/logout', auth, (req, res) => {
       return res.status(200).send({success: true})
     }
   )
-})//Logout
+})//Logout - Authentication
+
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
