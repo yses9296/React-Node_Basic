@@ -50,3 +50,36 @@
   background: #fff;
   border: 1px solid #dbdbdb;
 } 
+
+/* loginPage */
+.register_page {
+  background-color: beige;
+}
+.register_page form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.register_page form label {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.register_page form input {
+  display: block;
+  width: 300px;
+  margin-top: 10px;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid #555;
+  outline: none;  
+}
+.register_page form button {
+  display: block;
+  width: 150px;
+  height: 40px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  background: #fff;
+  border: 1px solid #dbdbdb;
+} 
