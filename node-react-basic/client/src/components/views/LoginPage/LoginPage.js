@@ -1,10 +1,13 @@
 import { Axios } from 'axios';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { loginUser } from '../../../_actions/user_action'
+import { loginUser } from '../../../_actions/user_action';
+import { useNavigate  } from 'react-router-dom';
+// import Auth from '../../../hoc/auth'
 
 const LoginPage = (props) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -27,7 +30,7 @@ const LoginPage = (props) => {
     dispatch(loginUser(body))
       .then(response => {
         if(response.payload.loginSuccess){
-          // props.history.push('/') //hoc autg 설정 필요
+          navigate('/') //hoc autg 설정 필요
         }
         else {
           alert('Error')
@@ -55,3 +58,4 @@ const LoginPage = (props) => {
 }
 
 export default LoginPage
+// export default Auth(LoginPage, false)

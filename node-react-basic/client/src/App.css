@@ -16,6 +16,14 @@
 /* langdingPage */
 .landing_page {
   background-color: #999;
+  flex-direction: column;
+}
+.logout_btn {
+  display: block;
+  background: #000;
+  color: #fff;
+  width: 150px; height: 30px;
+  text-transform: uppercase;
 }
 
 /* loginPage */

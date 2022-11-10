@@ -1,10 +1,12 @@
 import { Axios } from 'axios';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { registerUser } from '../../../_actions/user_action'
+import { registerUser } from '../../../_actions/user_action';
+import { useNavigate  } from 'react-router-dom';
 
-function RegisterPage() {
+function RegisterPage(props) {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
@@ -39,7 +41,7 @@ function RegisterPage() {
     dispatch(registerUser(body))
     .then(response => {
       if(response.payload.success){
-        // props.history.push('/') //hoc autg 설정 필요
+        navigate('/') 
       }
       else {
         alert('Failed to Sign up, please try again.')
