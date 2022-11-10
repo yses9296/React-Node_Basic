@@ -9,12 +9,11 @@ import './App.css';
 import Auth from './hoc/auth'
 
 function App() {
+
   return (
     <Router>
       <div>
         <Routes>
-
-          {/* <Route path="/" element={<LandingPage/>}></Route> */}
 
           <Route exact path="/" element={Auth(LandingPage, null )  } />
           <Route exact path="/login" element={Auth(LoginPage, false) } />
